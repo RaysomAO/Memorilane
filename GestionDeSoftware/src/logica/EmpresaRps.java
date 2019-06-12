@@ -86,15 +86,12 @@ public class EmpresaRps implements Serializable {
 	
 	public void agregarCliente(Cliente cliente) {
 		for(Cliente c: misclientes) {
-			
 			if(c instanceof Indepediente && ((Indepediente) c).getCedula().equalsIgnoreCase( ((Indepediente) cliente).getCedula())) {
 				System.out.println("La cedula :"+((Indepediente) c).getCedula()+" ya existe en el registro, verifique de nuevo");
 			} 
-			
 			else if(c instanceof Empresa && ((Empresa) c).getRnc().equalsIgnoreCase( ((Empresa) cliente).getRnc())) {
 				System.out.println("El RNC :"+((Empresa) c).getRnc()+" ya existe en el registro, verifique de nuevo");
 			} 
-			
 			else {
 				misclientes.add(cliente);
 				System.out.println("Cliente Agregado");
